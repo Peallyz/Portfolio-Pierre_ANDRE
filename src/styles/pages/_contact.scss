@@ -21,9 +21,10 @@
     .contact__main {
         display: flex;
         position: relative;
-        margin: auto;
+        margin: calc(2vw + 20px) auto 0px;
+        padding-bottom: 40px;
         flex-grow: 1;
-        margin-top: calc(2vw + 20px);
+
         @media screen and (max-width: 700px) {
             flex-direction: column;
         }

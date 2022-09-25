@@ -27,10 +27,11 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        height: calc(100vh - 150px);
+        min-height: calc(100vh - 150px);
         min-height: 450px;
         max-width: 1700px;
         scroll-snap-align: center;
+        height: auto;
         @media screen and (min-width: 1700px) {
             min-height: 750px;
             margin: 0 auto;
@@ -85,6 +86,8 @@
         }
         &.profil__cv {
             flex-direction: row-reverse;
+            min-height: 700px;
+            margin-bottom: 50px;
             .container__left {
                 text-align: center;
             }
@@ -95,6 +98,7 @@
             }
             @media screen and (max-width: 800px) {
                 flex-direction: column;
+                min-height: 750px;
                 margin-bottom: 50px;
                 img {
                     width: 240px;
@@ -103,7 +107,7 @@
         }
 
         &.profil__img {
-            margin-left: 0px;
+            margin: 0px;
             max-width: none;
             .img {
                 width: 100%;
@@ -150,6 +154,8 @@
         width: 45%;
         border-radius: 5px;
         overflow: hidden;
+        padding: 10px;
+        margin-top: 10px;
         @media screen and (max-width: 800px) {
             width: 90%;
         }
