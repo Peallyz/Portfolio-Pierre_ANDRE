@@ -1,0 +1,13 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    h5 {
+        font-family: Oswald, Arial, Helvetica, sans-serif;
+        color: $blue;
+        font-size: clamp(0.7rem, 1vw, 1rem);
+    }
+}

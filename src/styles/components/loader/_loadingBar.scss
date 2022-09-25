@@ -1,0 +1,56 @@
+.loading__container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 143px;
+
+    .loading {
+        border-radius: 30px;
+        background-color: $rose;
+        height: 5px;
+
+        &__bar {
+            height: 100%;
+            border-radius: 30px;
+            transition: 0.4s linear;
+
+            transform: scaleX(0);
+            transform-origin: 0;
+            background-color: $light__blue;
+            box-shadow: 0 0 40px $light__blue;
+            animation: progress 4s forwards;
+        }
+
+        &__percent {
+            position: absolute;
+            font-size: 1rem;
+            font-family: "Oswald", Arial, Helvetica, sans-serif;
+            color: $light__blue;
+            bottom: 5px;
+            right: 0;
+            z-index: 1;
+        }
+    }
+}
+
+@keyframes progress {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes icon {
+    0% {
+        opacity: 0.2;
+        text-shadow: 0 0 0 #f3c623;
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px #f3c623;
+    }
+}

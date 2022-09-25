@@ -1,0 +1,158 @@
+.project {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    max-width: 900px;
+    align-items: center;
+    flex-direction: column;
+    min-width: 300px;
+
+    &__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 15px 20px 15px $blue__shadow;
+        outline: 1px solid $violet;
+        margin-bottom: 10px;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.05);
+            & + .project__side {
+                .project__techno {
+                    span {
+                        transform: translateX(0);
+                    }
+                }
+                .project__date {
+                    span {
+                        transform: translateY(0);
+                    }
+                }
+            }
+            .project__info {
+                transform: scaleY(0.85);
+                h2 {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+        .project__info {
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            outline: 1px solid $violet;
+            box-shadow: inset 0px 0px 10px $violet;
+            z-index: 3;
+            position: absolute;
+            background-color: $violet__shadow;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease-in-out;
+            padding: 15px 10px 10px;
+            color: $rose;
+            h2 {
+                transform: translateY(100%);
+                opacity: 0;
+                transition: all 0.2s 0.1s ease-in-out;
+                font-family: Offside;
+                margin-bottom: 15px;
+                font-size: clamp(0.6rem, calc(2vw + 0.5rem), 2.2rem);
+                @media screen and (max-width: 600px) {
+                    font-size: calc(1.5vw + 0.3rem);
+                }
+            }
+            p {
+                width: 70%;
+                font-size: clamp(0.6rem, calc(1vw + 0.3rem), 1.5rem);
+                font-family: oswald;
+                font-weight: 200;
+                line-height: clamp(0.5rem, calc(2vw + 5px), 2.5rem);
+                @media screen and (max-width: 600px) {
+                    width: 90%;
+                    font-size: calc(1.2vw + 0.2rem);
+                }
+            }
+        }
+        img {
+            background-size: contain;
+            width: 100%;
+        }
+    }
+    &__side {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+        font-size: clamp(0.4rem, calc(0.5vw + 0.3rem), 1.3rem);
+        margin-top: 20px;
+        color: $violet;
+        font-weight: 600;
+        font-family: Offside, Arial, Helvetica, sans-serif;
+        margin-bottom: 30px;
+
+        .project__techno {
+            position: relative;
+
+            border-left: 2px solid $violet;
+            margin: 0 20px 0 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            @media screen and (max-width: 800px) {
+                padding: 0 0 0 5px;
+            }
+            span {
+                transform: translateX(-150%);
+                transition: transform 0.2s ease-in-out;
+                line-height: 20px;
+                @media screen and (max-width: 600px) {
+                    line-height: 10px;
+                }
+            }
+        }
+        .project__date {
+            padding: 10px;
+            border-top: 2px solid $violet;
+            overflow: hidden;
+            @media screen and (max-width: 650px) {
+                padding: 10px 0 0 0;
+            }
+            span {
+                display: block;
+                transition: transform 0.2s ease-in-out;
+                transform: translateY(-200%);
+                @media screen and (max-width: 600px) {
+                    transform: translateY(-250%);
+                }
+            }
+        }
+    }
+
+    .navbtn {
+        font-size: clamp(0.4rem, calc(1vw + 0.3rem), 1.3rem);
+        height: 50px;
+        align-self: center;
+        opacity: 1;
+        max-width: 550px;
+        min-width: 100px;
+        margin: 0 0 0 20px;
+        padding: 0px 30px;
+
+        line-height: 30px;
+        position: relative;
+        overflow: hidden;
+
+        animation: none;
+    }
+}

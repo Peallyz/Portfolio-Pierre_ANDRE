@@ -1,0 +1,257 @@
+.contact {
+    position: relative;
+    min-height: 100vh;
+    max-height: 100%;
+
+    .container__left {
+        width: 55%;
+
+        @media screen and (max-width: 700px) {
+            width: 100%;
+        }
+    }
+    .container__right {
+        width: 45%;
+
+        @media screen and (max-width: 700px) {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+    .contact__main {
+        display: flex;
+        position: relative;
+        margin: auto;
+        flex-grow: 1;
+        margin-top: calc(2vw + 20px);
+        @media screen and (max-width: 700px) {
+            flex-direction: column;
+        }
+    }
+    .form__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        label,
+        h2 {
+            font-family: Offside, Arial, Helvetica, sans-serif;
+            color: $violet;
+        }
+        p {
+            font-family: Oswald, Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            color: $blue;
+            font-size: clamp(0.7rem, 1vw, 1.2rem);
+        }
+        .checkbox {
+            display: flex;
+            flex-direction: row-reverse;
+            label {
+                font-family: Oswald, Arial, Helvetica, sans-serif;
+                font-weight: 400;
+                color: $blue;
+                font-size: clamp(0.7rem, 1vw, 1.2rem);
+            }
+            input {
+                margin-right: 15px;
+            }
+        }
+        .form__message {
+            font-family: Offside, Arial, Helvetica, sans-serif;
+            color: $violet;
+            text-align: center;
+            font-weight: 900;
+            & .success {
+                color: hsl(133, 76%, 26%);
+            }
+            & .error {
+                color: hsl(0, 84%, 33%);
+            }
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input,
+        textarea,
+        label {
+            margin-bottom: 15px;
+        }
+
+        input,
+        textarea {
+            border-radius: 5px;
+            outline: none;
+            border: 2px solid $violet;
+            background: $rose;
+            padding: 10px;
+            font-family: "Quattrocento", "Times New Roman", Times, serif;
+            font-size: 1rem;
+            color: $violet;
+            font-weight: 800;
+            &::placeholder {
+                font-family: "Quattrocento", "Times New Roman", Times, serif;
+                color: lighten($violet, 30%);
+            }
+        }
+        textarea {
+            height: 200px;
+        }
+
+        input.button {
+            width: 100px;
+            align-self: flex-end;
+            cursor: pointer;
+            align-items: center;
+
+            background-image: radial-gradient(
+                100% 100% at 100% 0,
+                lighten($violet, 10%) 0,
+                lighten($light__blue, 5%) 100%
+            );
+            border: 0;
+            border-radius: 5px;
+            box-shadow: $blue 0 2px 4px, lighten($blue, 10%) 0 7px 13px -3px,
+                lighten($blue, 5%) 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: $rose;
+            display: inline-flex;
+            font-family: Offside, Arial, Helvetica, sans-serif;
+            height: 48px;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow 0.15s, transform 0.15s;
+
+            touch-action: manipulation;
+            white-space: nowrap;
+
+            &:focus {
+                box-shadow: $light__blue 0 0 0 1.5px inset, $blue 0 2px 4px,
+                    $blue 0 7px 13px -3px, $violet 0 -3px 0 inset;
+            }
+
+            &:hover {
+                box-shadow: $blue 0 4px 8px, lighten($blue, 10%) 0 7px 13px -3px,
+                    $light__blue 0 -3px 0 inset;
+                transform: translateY(-2px);
+            }
+
+            &:active {
+                box-shadow: $light__blue 0 3px 7px inset;
+                transform: translateY(2px);
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+        }
+    }
+    .contact__infos {
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        @media screen and (max-width: 700px) {
+            margin-top: 20px;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width: 500px) {
+            flex-direction: column;
+            margin-left: 50px;
+        }
+        .content {
+            span {
+                display: none;
+                color: $blue;
+                &.copied {
+                    margin-left: 20px;
+                    display: inline;
+                    animation: fadeOutCopied 700ms 1800ms ease-in-out forwards;
+                }
+            }
+        }
+
+        .phone {
+            .content {
+                @media screen and (max-width: 700px) {
+                    position: relative;
+                    left: 0;
+                }
+                @media screen and (max-width: 500px) {
+                    margin-bottom: 10px;
+                }
+                position: absolute;
+
+                left: 20vw;
+            }
+        }
+        .email {
+            .content {
+                @media screen and (max-width: 700px) {
+                    position: relative;
+                    left: 0;
+                }
+                position: absolute;
+
+                left: 10vw;
+            }
+        }
+        .network {
+            @media screen and (max-width: 500px) {
+                margin-top: 15px;
+            }
+            .content {
+                position: relative;
+
+                right: 0%;
+            }
+        }
+
+        h4 {
+            font-family: Offside, Arial, Helvetica, sans-serif;
+            font-size: calc(1vw + 0.6rem);
+            color: $violet;
+            text-shadow: 0 0 2px $rose;
+        }
+        p {
+            position: relative;
+            left: 20px;
+            margin-top: 10px;
+            color: $violet;
+            font-weight: 600;
+            transition: all 0.1s ease-out;
+            @media screen and (max-width: 500px) {
+                width: 80%;
+            }
+
+            &:hover {
+                color: $rose;
+                text-shadow: 0 0 4px $violet;
+            }
+            i {
+                transition: 1.1s ease-out;
+                position: relative;
+                bottom: 8px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@keyframes fadeOutCopied {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

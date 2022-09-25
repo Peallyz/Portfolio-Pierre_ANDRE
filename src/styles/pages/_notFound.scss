@@ -1,0 +1,17 @@
+.notFound {
+    &__container {
+        position: relative;
+        margin-top: 15vh;
+        text-align: center;
+        font-family: Oswald, Arial, Helvetica, sans-serif;
+        font-size: clamp(0.4rem, calc(0.8vw + 0.4rem), 1.5rem);
+        color: $blue;
+        a {
+            color: $light__blue;
+            text-decoration: underline;
+            &:hover {
+                color: $rose;
+            }
+        }
+    }
+}

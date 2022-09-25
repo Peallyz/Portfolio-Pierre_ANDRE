@@ -1,0 +1,82 @@
+.projets {
+    position: relative;
+    min-height: 100vh;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        display: flex;
+        overflow: hidden;
+        padding-top: 50px;
+        margin-bottom: 30px;
+        flex-grow: 1;
+
+        .project__left,
+        .project__main,
+        .project__right {
+            flex-grow: 1;
+            transform: translateX(-100vw);
+
+            min-width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: rotate 0.4s ease-in-out;
+            &.move__left {
+                animation: moveLeft 0.4s ease-in-out backwards;
+            }
+            &.move__right {
+                animation: moveRight 0.4s ease-in-out backwards;
+            }
+        }
+    }
+
+    button {
+        background: transparent;
+        color: $violet;
+        &:hover {
+            color: $rose;
+            text-shadow: 0 0 2px $rose;
+            i {
+                transition: all 0.05s ease-in-out;
+                transform: scale(1.1, 1.1);
+            }
+        }
+        &:active {
+            i {
+                transform: scale(0.8, 0.8);
+            }
+        }
+        i {
+            font-size: clamp(10px, calc(2vw + 10px), 50px);
+        }
+        &.chevron__left {
+            top: 50%;
+            left: 20px;
+            @media screen and (max-width: 450px) {
+                left: 5px;
+            }
+        }
+        &.chevron__right {
+            top: 50%;
+            right: 20px;
+            @media screen and (max-width: 450px) {
+                right: 5px;
+            }
+        }
+        position: absolute;
+        z-index: 20;
+    }
+}
+
+@keyframes moveRight {
+    to {
+        transform: translateX(-200vw);
+    }
+}
+@keyframes moveLeft {
+    to {
+        transform: translateX(0vw);
+    }
+}

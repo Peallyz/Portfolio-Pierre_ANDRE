@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Offside&family=Oswald:wght@200;300;400;500;600;700&family=Quattrocento:wght@400;700&display=swap");
+
+/* SCSS HEX */
+$green: #adfceaff;
+$blue: #1f2041ff;
+$blue__shadow: rgba(31, 32, 65, 0.308);
+$violet__shadow: rgba(75, 63, 114, 0.856);
+$violet: #4b3f72ff;
+$rose: #ffeaecff;
+$light__blue: #19647eff;
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(
+    0deg,
+    #adfceaff,
+    #1f2041ff,
+    #4b3f72ff,
+    #ffeaecff,
+    #19647eff
+);
+$gradient-right: linear-gradient(
+    90deg,
+    #adfceaff,
+    #1f2041ff,
+    #4b3f72ff,
+    #ffeaecff,
+    #19647eff
+);
+$gradient-bottom: linear-gradient(
+    180deg,
+    #adfceaff,
+    #1f2041ff,
+    #4b3f72ff,
+    #ffeaecff,
+    #19647eff
+);
+$gradient-left: linear-gradient(
+    270deg,
+    #adfceaff,
+    #1f2041ff,
+    #4b3f72ff,
+    #ffeaecff,
+    #19647eff
+);
+$gradient-top-right: linear-gradient(
+    45deg,
+    #adfceaff,
+    #1f2041ff,
+    #4b3f72ff,
+    #ffeaecff,
+    #19647eff
+);
+$gradient-bottom-right: linear-gradient(
+    135deg,
+    #adfceaff,
+    #1f2041ff,
+    #4b3f72ff,
+    #ffeaecff,
+    #19647eff
+);
+$gradient-top-left: linear-gradient(
+    225deg,
+    #adfceaff,
+    #1f2041ff,
+    #4b3f72ff,
+    #ffeaecff,
+    #19647eff
+);
+$gradient-bottom-left: linear-gradient(
+    315deg,
+    #adfceaff,
+    #1f2041ff,
+    #4b3f72ff,
+    #ffeaecff,
+    #19647eff
+);
+$gradient-radial: radial-gradient(
+    #adfceaff,
+    #1f2041ff,
+    #4b3f72ff,
+    #ffeaecff,
+    #19647eff
+);
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: auto;
+    min-height: 100vh;
+    max-height: 100%;
+
+    background: linear-gradient(
+        95.2deg,
+        #adfcea 26.8%,
+        rgba(192, 229, 246, 1) 64%
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-family: "Quattrocento", "Times New Roman", Times, serif;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Offside", Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}

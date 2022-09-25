@@ -1,0 +1,76 @@
+.skill {
+    position: relative;
+    min-height: 100vh;
+    max-height: 100%;
+    padding-bottom: 20px;
+    h3 {
+        position: relative;
+        text-align: center;
+        margin: 30px auto;
+        color: $violet;
+        font-size: clamp(0.5rem, calc(0.5vw + 0.5rem), 1.5rem);
+        width: 50%;
+        max-width: 800px;
+        min-width: 300px;
+        background: $rose;
+        padding: 15px 25px;
+        border-radius: 5px;
+        outline: 2px solid $violet;
+        font-family: Oswald, Arial, Helvetica, sans-serif;
+        font-weight: 400;
+    }
+    &__container {
+        position: relative;
+        display: flex;
+        max-width: 1000px;
+        width: 100%;
+        margin: 30px auto;
+        font-family: Oswald, Arial, Helvetica, sans-serif;
+        border: 2px solid $violet;
+        border-radius: 5px;
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+
+            width: 70%;
+        }
+        h4 {
+            color: $violet;
+            margin: 20px 0 30px;
+
+            font-size: clamp(0.5rem, calc(1vw + 0.5rem), 1.5rem);
+        }
+        .skill__container--left,
+        .skill__container--right {
+            div {
+                margin-bottom: 50px;
+                padding-left: 20px;
+            }
+        }
+        i {
+            font-size: clamp(30px, 3vw, 50px);
+            padding: 20px;
+            background: lighten($blue, 10%);
+            border-radius: 50%;
+            margin-left: 15px;
+
+            box-shadow: inset 0px 0px 5px 5px $blue;
+            @media screen and (max-width: 550px) {
+                margin-left: 5px;
+                padding: 10px;
+            }
+            &.devicon-github-original-wordmark {
+                color: $rose;
+            }
+        }
+
+        &--left {
+            width: 100%;
+        }
+        &--right {
+            width: 100%;
+            li {
+                font-size: clamp(0.5rem, calc(0.8vw + 0.6rem), 1.5rem);
+            }
+        }
+    }
+}
