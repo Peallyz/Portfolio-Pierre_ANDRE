@@ -1,14 +1,33 @@
 .header {
     position: relative;
     height: 150px;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(lighten($violet, 30%)),
+        to(lighten($light__blue, 47%))
+    );
+    background: -o-linear-gradient(
+        top,
+        lighten($violet, 30%),
+        lighten($light__blue, 47%)
+    );
     background: linear-gradient(
         to bottom,
         lighten($violet, 30%),
         lighten($light__blue, 47%)
     );
+    -webkit-box-shadow: 0 0 105px 185px lighten($light__blue, 47%);
     box-shadow: 0 0 105px 185px lighten($light__blue, 47%);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     .backToMainPage {
         display: none;
@@ -24,6 +43,8 @@
             i {
                 color: $rose;
                 text-shadow: 0 0 15px $rose;
+                -webkit-transform: translateX(-10px) scale(1.2, 1.2);
+                -ms-transform: translateX(-10px) scale(1.2, 1.2);
                 transform: translateX(-10px) scale(1.2, 1.2);
             }
         }
@@ -31,6 +52,8 @@
             font-size: calc(2vw + 20px);
             color: $violet;
             pointer-events: none;
+            -webkit-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
         }
     }
@@ -45,28 +68,38 @@
         border: 5px solid darken($violet, 5%);
         border-radius: 10px;
         padding: 10px 10px;
+        -webkit-box-shadow: 0 0 15px darken($violet, 5%),
+            inset 0 0 15px darken($violet, 5%);
         box-shadow: 0 0 15px darken($violet, 5%),
             inset 0 0 15px darken($violet, 5%);
         text-shadow: 0 0 15px darken($violet, 5%);
+        -webkit-animation: cligottement 8s cubic-bezier(0, 1.33, 0, 0.97)
+                infinite,
+            apparition 0.4s 0.4s forwards ease-in-out;
         animation: cligottement 8s cubic-bezier(0, 1.33, 0, 0.97) infinite,
             apparition 0.4s 0.4s forwards ease-in-out;
     }
 }
 
-@keyframes cligottement {
+@-webkit-keyframes cligottement {
     0% {
         text-shadow: 0 0 0px darken($violet, 5%);
+        -webkit-box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken(darken($violet, 5%), 5%);
         box-shadow: 0 0 0px darken($violet, 5%),
             inset 0 0 0px darken(darken($violet, 5%), 5%);
         color: darken($violet, 10%);
     }
     5% {
         text-shadow: 1px 1px 15px $rose;
+        -webkit-box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
         box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
         color: darken($violet, 5%);
     }
     8% {
         text-shadow: 0 0 0px darken($violet, 5%);
+        -webkit-box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken($violet, 5%);
         box-shadow: 0 0 0px darken($violet, 5%),
             inset 0 0 0px darken($violet, 5%);
         color: darken($violet, 10%);
@@ -74,11 +107,14 @@
 
     39% {
         text-shadow: 1px 1px 15px $rose;
+        -webkit-box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
         box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
         color: darken($violet, 5%);
     }
     40% {
         text-shadow: 0 0 0px darken($violet, 5%);
+        -webkit-box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken($violet, 5%);
         box-shadow: 0 0 0px darken($violet, 5%),
             inset 0 0 0px darken($violet, 5%);
         color: darken($violet, 10%);
@@ -86,14 +122,81 @@
 
     98% {
         text-shadow: 1px 1px 15px $rose;
+        -webkit-box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
         box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
         color: darken($violet, 5%);
     }
     100% {
         text-shadow: 0 0 0px darken($violet, 5%);
+        -webkit-box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken($violet, 5%);
         box-shadow: 0 0 0px darken($violet, 5%),
             inset 0 0 0px darken($violet, 5%);
         color: darken($violet, 10%);
+    }
+}
+
+@keyframes cligottement {
+    0% {
+        text-shadow: 0 0 0px darken($violet, 5%);
+        -webkit-box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken(darken($violet, 5%), 5%);
+        box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken(darken($violet, 5%), 5%);
+        color: darken($violet, 10%);
+    }
+    5% {
+        text-shadow: 1px 1px 15px $rose;
+        -webkit-box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
+        box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
+        color: darken($violet, 5%);
+    }
+    8% {
+        text-shadow: 0 0 0px darken($violet, 5%);
+        -webkit-box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken($violet, 5%);
+        box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken($violet, 5%);
+        color: darken($violet, 10%);
+    }
+
+    39% {
+        text-shadow: 1px 1px 15px $rose;
+        -webkit-box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
+        box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
+        color: darken($violet, 5%);
+    }
+    40% {
+        text-shadow: 0 0 0px darken($violet, 5%);
+        -webkit-box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken($violet, 5%);
+        box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken($violet, 5%);
+        color: darken($violet, 10%);
+    }
+
+    98% {
+        text-shadow: 1px 1px 15px $rose;
+        -webkit-box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
+        box-shadow: 1px 1px 15px $rose, inset 1px 1px 15px $rose;
+        color: darken($violet, 5%);
+    }
+    100% {
+        text-shadow: 0 0 0px darken($violet, 5%);
+        -webkit-box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken($violet, 5%);
+        box-shadow: 0 0 0px darken($violet, 5%),
+            inset 0 0 0px darken($violet, 5%);
+        color: darken($violet, 10%);
+    }
+}
+
+@-webkit-keyframes apparition {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

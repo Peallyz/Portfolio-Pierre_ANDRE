@@ -11,9 +11,17 @@
         position: fixed;
         width: 100%;
         z-index: 5;
+        -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
         transform: scaleX(0);
+        -webkit-transform-origin: left;
+        -ms-transform-origin: left;
         transform-origin: left;
+        -webkit-transition: -webkit-transform 0.2s ease-out;
+        transition: -webkit-transform 0.2s ease-out;
+        -o-transition: transform 0.2s ease-out;
         transition: transform 0.2s ease-out;
+        transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
     }
 
     .loader {
@@ -24,8 +32,13 @@
     .section {
         margin: 10px 10px;
         position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         height: calc(100vh - 150px);
         min-height: 450px;
@@ -46,15 +59,24 @@
             position: absolute;
             top: 0px;
             left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
             transform: translateX(-50%);
             width: 50%;
             height: 2px;
         }
 
         &.profil__title {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             padding-top: 90px;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
             justify-content: flex-start;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             height: 90vh;
 
@@ -72,18 +94,30 @@
         }
         &.profil__school {
             @media screen and (max-width: 800px) {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
                 flex-direction: column;
                 margin-bottom: 50px;
             }
         }
         &.profil__work {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
             @media screen and (max-width: 800px) {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
                 flex-direction: column;
                 margin-bottom: 50px;
             }
         }
         &.profil__cv {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
             .container__left {
                 text-align: center;
@@ -94,6 +128,9 @@
                 max-width: 425px;
             }
             @media screen and (max-width: 800px) {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
                 flex-direction: column;
                 margin-bottom: 50px;
                 img {
@@ -113,9 +150,12 @@
                 background-position: center;
                 background-attachment: fixed;
 
+                -webkit-animation: hueRotate 20s infinite;
+
                 animation: hueRotate 20s infinite;
                 &:hover {
                     h2 {
+                        -webkit-filter: blur(0px);
                         filter: blur(0px);
                     }
                 }
@@ -124,9 +164,16 @@
                     text-align: center;
                     color: $rose;
                     font-family: OffSide, Arial, Helvetica, sans-serif;
+                    -webkit-filter: blur(10px);
                     filter: blur(10px);
+                    -webkit-transition: -webkit-filter 0.2s ease-in-out;
+                    transition: -webkit-filter 0.2s ease-in-out;
+                    -o-transition: filter 0.2s ease-in-out;
                     transition: filter 0.2s ease-in-out;
+                    transition: filter 0.2s ease-in-out,
+                        -webkit-filter 0.2s ease-in-out;
                     @media screen and (max-width: 800px) {
+                        -webkit-filter: blur(0px);
                         filter: blur(0px);
                     }
                 }
@@ -134,12 +181,18 @@
         }
         &.profil__school {
             @media screen and (max-width: 800px) {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
                 flex-direction: column;
                 margin-bottom: 50px;
             }
         }
         &.profil__dev {
             @media screen and (max-width: 800px) {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
                 flex-direction: column;
                 margin-bottom: 50px;
             }
@@ -160,10 +213,16 @@
     }
     .container__left {
         opacity: 0;
+        -webkit-transform: translateX(-100px);
+        -ms-transform: translateX(-100px);
         transform: translateX(-100px);
+        -webkit-transition: all 0.4s 0.1s ease-in-out;
+        -o-transition: all 0.4s 0.1s ease-in-out;
         transition: all 0.4s 0.1s ease-in-out;
         &.visible {
             opacity: 1;
+            -webkit-transform: translateX(0px);
+            -ms-transform: translateX(0px);
             transform: translateX(0px);
         }
     }
@@ -179,20 +238,48 @@
     left: 10px;
 }
 
-@keyframes hueRotate {
+@-webkit-keyframes hueRotate {
     0% {
+        -webkit-filter: hue-rotate(0deg) sepia(0.2);
         filter: hue-rotate(0deg) sepia(0.2);
     }
     25% {
+        -webkit-filter: hue-rotate(90deg) sepia(0.2);
         filter: hue-rotate(90deg) sepia(0.2);
     }
     50% {
+        -webkit-filter: hue-rotate(180deg) sepia(0.2);
         filter: hue-rotate(180deg) sepia(0.2);
     }
     75% {
+        -webkit-filter: hue-rotate(270deg) sepia(0.2);
         filter: hue-rotate(270deg) sepia(0.2);
     }
     100% {
+        -webkit-filter: hue-rotate(360deg) sepia(0.2);
+        filter: hue-rotate(360deg) sepia(0.2);
+    }
+}
+
+@keyframes hueRotate {
+    0% {
+        -webkit-filter: hue-rotate(0deg) sepia(0.2);
+        filter: hue-rotate(0deg) sepia(0.2);
+    }
+    25% {
+        -webkit-filter: hue-rotate(90deg) sepia(0.2);
+        filter: hue-rotate(90deg) sepia(0.2);
+    }
+    50% {
+        -webkit-filter: hue-rotate(180deg) sepia(0.2);
+        filter: hue-rotate(180deg) sepia(0.2);
+    }
+    75% {
+        -webkit-filter: hue-rotate(270deg) sepia(0.2);
+        filter: hue-rotate(270deg) sepia(0.2);
+    }
+    100% {
+        -webkit-filter: hue-rotate(360deg) sepia(0.2);
         filter: hue-rotate(360deg) sepia(0.2);
     }
 }

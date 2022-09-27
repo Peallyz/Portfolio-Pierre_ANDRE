@@ -87,6 +87,7 @@ $gradient-radial: radial-gradient(
 ::after {
     padding: 0;
     margin: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -95,6 +96,12 @@ body {
     min-height: 100vh;
     max-height: 100%;
 
+    background: -o-linear-gradient(
+        354.8deg,
+        #adfcea 26.8%,
+        rgba(192, 229, 246, 1) 64%
+    );
+
     background: linear-gradient(
         95.2deg,
         #adfcea 26.8%,
@@ -102,7 +109,7 @@ body {
     );
     background-size: contain;
     background-repeat: no-repeat;
-    font-family: "Quattrocento", "Times New Roman", Times, serif;
+    font-family: "Oswald", "Times New Roman", Times, serif;
 }
 
 button {

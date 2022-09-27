@@ -1,9 +1,13 @@
 .social__network {
     ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         a {
             margin: 10px 10px;
             padding: 1.5rem;
+            -webkit-transition: 0.8s ease-out;
+            -o-transition: 0.8s ease-out;
             transition: 0.8s ease-out;
             &:hover {
                 i {
@@ -12,6 +16,8 @@
                 }
             }
             i {
+                -webkit-transition: 0.1s ease-out;
+                -o-transition: 0.1s ease-out;
                 transition: 0.1s ease-out;
                 font-size: calc(1vw + 1rem);
                 color: $violet;
@@ -24,10 +30,14 @@
 @media screen and (max-width: 700px) {
     .social__network {
         ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             a {
                 margin: 0px;
                 padding: 1rem;
+                -webkit-transition: 0.8s ease-out;
+                -o-transition: 0.8s ease-out;
                 transition: 0.8s ease-out;
                 &:hover {
                     i {
@@ -36,6 +46,8 @@
                     }
                 }
                 i {
+                    -webkit-transition: 0.1s ease-out;
+                    -o-transition: 0.1s ease-out;
                     transition: 0.1s ease-out;
                     font-size: calc(1vw + 1rem);
                     color: $violet;

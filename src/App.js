@@ -30,7 +30,7 @@ function App() {
                                 path="/competences"
                                 element={<Competences />}
                             />
-                            <Route path="/*" element={<NotFound />} />
+                            <Route path="*" element={<NotFound />} />
                         </>
                     )}
                 </Routes>

@@ -19,8 +19,14 @@
     line-height: 60px;
     position: relative;
     overflow: hidden;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
     transform: scale(1, 1);
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+    -webkit-animation: button 750ms 4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+        forwards;
     animation: button 750ms 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     &::before {
         content: "";
@@ -33,32 +39,79 @@
         background-color: $violet;
         z-index: -1;
         opacity: 0;
+        -webkit-transform: scale(0, 0.5) rotate(30deg);
+        -ms-transform: scale(0, 0.5) rotate(30deg);
         transform: scale(0, 0.5) rotate(30deg);
+        -webkit-transition: -webkit-transform 0.2s ease-in-out;
+        transition: -webkit-transform 0.2s ease-in-out;
+        -o-transition: transform 0.2s ease-in-out;
         transition: transform 0.2s ease-in-out;
+        transition: transform 0.2s ease-in-out,
+            -webkit-transform 0.2s ease-in-out;
+        -webkit-box-shadow: 0px 0px 5px $rose, inset 0px 0px 5px $rose;
         box-shadow: 0px 0px 5px $rose, inset 0px 0px 5px $rose;
     }
 
     &:hover {
+        -webkit-box-shadow: 0px 0px 5px $rose, inset 0px 0px 5px $rose;
         box-shadow: 0px 0px 5px $rose, inset 0px 0px 5px $rose;
         color: $rose;
         border: 2px solid $rose;
+        -webkit-transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
         transform: scale(1.1, 1.1);
+        @media screen and (max-width: 800px) {
+            -webkit-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            transform: scale(1, 1);
+        }
         &::before {
+            -webkit-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
             transform: scale(1, 1);
             opacity: 1;
         }
     }
     &:active {
+        @media screen and (max-width: 800px) {
+            -webkit-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            transform: scale(1, 1);
+        }
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
         transform: scale(0.8);
     }
-    @keyframes button {
+    @-webkit-keyframes button {
         from {
             opacity: 0;
+            -webkit-transform: translateX(50vw) scale(0, 0);
             transform: translateX(50vw) scale(0, 0);
         }
         to {
             opacity: 1;
+            -webkit-transform: translateX(0vw) scale(1, 1);
             transform: translateX(0vw) scale(1, 1);
+        }
+    }
+    @keyframes button {
+        from {
+            opacity: 0;
+            -webkit-transform: translateX(50vw) scale(0, 0);
+            transform: translateX(50vw) scale(0, 0);
+        }
+        to {
+            opacity: 1;
+            -webkit-transform: translateX(0vw) scale(1, 1);
+            transform: translateX(0vw) scale(1, 1);
+        }
+    }
+    @-webkit-keyframes button2 {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
         }
     }
     @keyframes button2 {
@@ -76,6 +129,7 @@
         display: none;
     }
     button.animationDone {
+        -webkit-animation: button2 750ms ease-in-out forwards;
         animation: button2 750ms ease-in-out forwards;
     }
 }

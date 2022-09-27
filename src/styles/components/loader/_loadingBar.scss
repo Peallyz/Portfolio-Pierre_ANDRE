@@ -12,12 +12,22 @@
         &__bar {
             height: 100%;
             border-radius: 30px;
+            -webkit-transition: 0.4s linear;
+            -o-transition: 0.4s linear;
             transition: 0.4s linear;
 
+            -webkit-transform: scaleX(0);
+
+            -ms-transform: scaleX(0);
+
             transform: scaleX(0);
+            -webkit-transform-origin: 0;
+            -ms-transform-origin: 0;
             transform-origin: 0;
             background-color: $light__blue;
+            -webkit-box-shadow: 0 0 40px $light__blue;
             box-shadow: 0 0 40px $light__blue;
+            -webkit-animation: progress 4s forwards;
             animation: progress 4s forwards;
         }
 
@@ -33,13 +43,39 @@
     }
 }
 
-@keyframes progress {
+@-webkit-keyframes progress {
     0% {
+        -webkit-transform: scaleX(0);
         transform: scaleX(0);
     }
 
     100% {
+        -webkit-transform: scaleX(1);
         transform: scaleX(1);
+    }
+}
+
+@keyframes progress {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}
+
+@-webkit-keyframes icon {
+    0% {
+        opacity: 0.2;
+        text-shadow: 0 0 0 #f3c623;
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px #f3c623;
     }
 }
 

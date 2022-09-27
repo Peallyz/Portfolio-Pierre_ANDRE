@@ -21,6 +21,8 @@
     }
     &__container {
         position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         max-width: 1000px;
         width: 100%;
@@ -29,6 +31,9 @@
         border: 2px solid $violet;
         border-radius: 5px;
         @media screen and (max-width: 900px) {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
 
             width: 70%;
@@ -52,6 +57,8 @@
             background: lighten($blue, 10%);
             border-radius: 50%;
             margin-left: 15px;
+
+            -webkit-box-shadow: inset 0px 0px 5px 5px $blue;
 
             box-shadow: inset 0px 0px 5px 5px $blue;
             @media screen and (max-width: 550px) {

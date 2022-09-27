@@ -1,16 +1,31 @@
 .nav {
     .navbar {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         ul {
             width: 300px;
             height: 300px;
             position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
+            -webkit-animation: navRotation 1s
+                cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
             animation: navRotation 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)
                 forwards;
             top: -100px;
@@ -23,16 +38,25 @@
             padding: 3px;
             line-height: 36px;
             aspect-ratio: 1/1;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             border-radius: 10px;
             position: absolute;
-            // background: linear-gradient(217deg, $rose, #adfceaff 70.71%),
-            //     linear-gradient(127deg, #ffeaecff, $rose 70.71%),
-            //     linear-gradient(336deg, $rose, #adfceaff 70.71%);
+
             cursor: pointer;
+            -webkit-box-shadow: inset 0 0 10px $violet, 0 0 10px $violet;
             box-shadow: inset 0 0 10px $violet, 0 0 10px $violet;
+
+            -webkit-transition: all 0.3s ease-in-out;
+
+            -o-transition: all 0.3s ease-in-out;
 
             transition: all 0.3s ease-in-out;
 
@@ -41,16 +65,27 @@
                 content: "";
                 width: 100%;
                 height: 100%;
+                background: -o-linear-gradient(
+                        233deg,
+                        #1f2041ff,
+                        #4b3f72ff 70.71%
+                    ),
+                    -o-linear-gradient(323deg, #19647eff, #4b3f72ff 70.71%),
+                    -o-linear-gradient(114deg, #19647eff, #1f2041ff 70.71%);
                 background: linear-gradient(217deg, #1f2041ff, #4b3f72ff 70.71%),
                     linear-gradient(127deg, #19647eff, #4b3f72ff 70.71%),
                     linear-gradient(336deg, #19647eff, #1f2041ff 70.71%);
                 z-index: -1;
                 border-radius: 7px;
                 opacity: 0;
+                -webkit-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
                 transition: all 0.3s ease-in-out;
             }
             &:hover {
                 border: 2px solid $rose;
+                -webkit-box-shadow: inset 0 0 10px $rose, 0 0 10px $rose,
+                    0 0 20px 5px $violet;
                 box-shadow: inset 0 0 10px $rose, 0 0 10px $rose,
                     0 0 20px 5px $violet;
                 &::before {
@@ -61,27 +96,41 @@
                     text-shadow: 0 0 4px $rose;
                 }
                 &.navbar__profil {
+                    -webkit-transform: translateY(-90px) scale(1, 1);
+                    -ms-transform: translateY(-90px) scale(1, 1);
                     transform: translateY(-90px) scale(1, 1);
                 }
                 &.navbar__skill {
+                    -webkit-transform: translate(-75px, -15px) scale(1, 1);
+                    -ms-transform: translate(-75px, -15px) scale(1, 1);
                     transform: translate(-75px, -15px) scale(1, 1);
                 }
                 &.navbar__projets {
+                    -webkit-transform: translate(75px, -15px) scale(1, 1);
+                    -ms-transform: translate(75px, -15px) scale(1, 1);
                     transform: translate(75px, -15px) scale(1, 1);
                 }
                 &.navbar__contact {
+                    -webkit-transform: translateY(60px) scale(1, 1);
+                    -ms-transform: translateY(60px) scale(1, 1);
                     transform: translateY(60px) scale(1, 1);
                 }
                 span {
                     opacity: 1;
+                    -webkit-transform: translateY(15px);
+                    -ms-transform: translateY(15px);
                     transform: translateY(15px);
                 }
             }
             i {
                 font-size: 30px;
                 text-shadow: 0 0 4px $violet;
+                -webkit-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
                 transition: all 0.3s ease-in-out;
                 pointer-events: none;
+                -webkit-animation: iconRotation 1s
+                    cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 animation: iconRotation 1s
                     cubic-bezier(0.175, 0.885, 0.32, 1.275);
             }
@@ -92,47 +141,80 @@
                 font-family: Offside, Arial, Helvetica, sans-serif;
                 text-shadow: 0 0 5px $violet;
                 opacity: 0;
+                -webkit-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
                 transform: translateY(-5px);
                 pointer-events: none;
+                -webkit-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
                 transition: all 0.3s ease-in-out;
             }
             &.navbar__profil {
+                -webkit-transform: translateY(-75px) scale(1, 1);
+                -ms-transform: translateY(-75px) scale(1, 1);
                 transform: translateY(-75px) scale(1, 1);
                 z-index: 4;
                 animation: iconPositioning 0.2s
                     cubic-bezier(0.25, -0.71, 0.72, 1.09) reverse;
             }
             &.navbar__skill {
+                -webkit-transform: translateX(-75px) scale(1, 1);
+                -ms-transform: translateX(-75px) scale(1, 1);
                 transform: translateX(-75px) scale(1, 1);
                 z-index: 3;
                 animation: iconPositioning 0.3s
                     cubic-bezier(0.25, -0.71, 0.72, 1.09) reverse;
             }
             &.navbar__projets {
+                -webkit-transform: translateX(75px) scale(1, 1);
+                -ms-transform: translateX(75px) scale(1, 1);
                 transform: translateX(75px) scale(1, 1);
                 z-index: 2;
                 animation: iconPositioning 0.4s
                     cubic-bezier(0.25, -0.71, 0.72, 1.09) reverse;
             }
             &.navbar__contact {
+                -webkit-transform: translateY(75px) scale(1, 1);
+                -ms-transform: translateY(75px) scale(1, 1);
                 transform: translateY(75px) scale(1, 1);
                 z-index: 1;
                 animation: iconPositioning 0.5s
                     cubic-bezier(0.25, -0.71, 0.72, 1.09) reverse;
             }
         }
+        @-webkit-keyframes iconPositioning {
+            to {
+                -webkit-transform: translateY(0px) scale(1, 1);
+                transform: translateY(0px) scale(1, 1);
+            }
+        }
         @keyframes iconPositioning {
             to {
+                -webkit-transform: translateY(0px) scale(1, 1);
                 transform: translateY(0px) scale(1, 1);
+            }
+        }
+        @-webkit-keyframes navRotation {
+            to {
+                -webkit-transform: rotate(360deg) translateX(-10%);
+                transform: rotate(360deg) translateX(-10%);
             }
         }
         @keyframes navRotation {
             to {
+                -webkit-transform: rotate(360deg) translateX(-10%);
                 transform: rotate(360deg) translateX(-10%);
+            }
+        }
+        @-webkit-keyframes iconRotation {
+            to {
+                -webkit-transform: rotate(-360deg);
+                transform: rotate(-360deg);
             }
         }
         @keyframes iconRotation {
             to {
+                -webkit-transform: rotate(-360deg);
                 transform: rotate(-360deg);
             }
         }
@@ -164,17 +246,22 @@ header {
                     .bar2,
                     .bar3 {
                         background: $rose;
+                        -webkit-box-shadow: 0 0 2px $rose;
                         box-shadow: 0 0 2px $rose;
                     }
                 }
                 &.active {
                     .bar1 {
+                        -webkit-transform: rotate(-45deg) translate(-5px, 13px);
+                        -ms-transform: rotate(-45deg) translate(-5px, 13px);
                         transform: rotate(-45deg) translate(-5px, 13px);
                     }
                     .bar2 {
                         opacity: 0;
                     }
                     .bar3 {
+                        -webkit-transform: rotate(45deg) translate(-5px, -13px);
+                        -ms-transform: rotate(45deg) translate(-5px, -13px);
                         transform: rotate(45deg) translate(-5px, -13px);
                     }
                 }
@@ -188,8 +275,17 @@ header {
                     background: $violet;
                     position: absolute;
                     pointer-events: none;
+                    -webkit-transition: opacity 0.4s ease-in-out,
+                        -webkit-transform 0.4s ease-in-out;
+                    transition: opacity 0.4s ease-in-out,
+                        -webkit-transform 0.4s ease-in-out;
+                    -o-transition: transform 0.4s ease-in-out,
+                        opacity 0.4s ease-in-out;
                     transition: transform 0.4s ease-in-out,
                         opacity 0.4s ease-in-out;
+                    transition: transform 0.4s ease-in-out,
+                        opacity 0.4s ease-in-out,
+                        -webkit-transform 0.4s ease-in-out;
                 }
                 .bar1 {
                     top: 0;
@@ -202,6 +298,8 @@ header {
                 }
             }
             ul {
+                -webkit-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
                 transition: all 0.2s ease-in-out;
                 background: $blue;
                 padding: 10px;
@@ -209,14 +307,26 @@ header {
                 outline: 2px solid $rose;
 
                 &.mobileNavOpen {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: row;
                     flex-direction: row;
                     opacity: 1;
+                    -webkit-transform: translate(-20px, 5px);
+                    -ms-transform: translate(-20px, 5px);
                     transform: translate(-20px, 5px);
                 }
                 &.mobileNavClose {
                     opacity: 0;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: row;
                     flex-direction: row;
+                    -webkit-transform: translate(300px, 5px);
+                    -ms-transform: translate(300px, 5px);
                     transform: translate(300px, 5px);
                 }
                 li {
@@ -254,7 +364,12 @@ header {
         z-index: 10;
 
         ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             padding-top: 10px;
             .nav-active {
@@ -268,11 +383,18 @@ header {
                 }
                 span {
                     opacity: 1;
+                    -webkit-transform: translateX(-40px);
+                    -ms-transform: translateX(-40px);
                     transform: translateX(-40px);
                 }
             }
             li {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: reverse;
+                -ms-flex-direction: row-reverse;
                 flex-direction: row-reverse;
                 text-align: center;
                 border-radius: 20px;
@@ -281,6 +403,8 @@ header {
                 margin-bottom: 5px;
                 &:hover {
                     span {
+                        -webkit-transform: translateX(-40px);
+                        -ms-transform: translateX(-40px);
                         transform: translateX(-40px);
                         opacity: 1;
                     }
@@ -307,6 +431,8 @@ header {
                     opacity: 0;
                     font-family: Offside, Arial, Helvetica, sans-serif;
                     font-weight: 400;
+                    -webkit-transition: all 0.4s ease-in-out;
+                    -o-transition: all 0.4s ease-in-out;
                     transition: all 0.4s ease-in-out;
                 }
             }
