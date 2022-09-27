@@ -11,28 +11,32 @@ const Home = ({ state }) => {
     const [selectedBienvenue, setSelectedBienvenue] = useState(0);
 
     useEffect(() => {
-        const showBienvenue = setTimeout(() => {
-            setSelectedBienvenue(1);
-        }, 5000);
+        const showBienvenue = () =>
+            setTimeout(() => {
+                setSelectedBienvenue(1);
+            }, 5000);
+        if (state) {
+            showBienvenue();
+        }
 
         return () => clearTimeout(showBienvenue);
-    }, [selectedBienvenue, setSelectedBienvenue]);
+    }, [selectedBienvenue, setSelectedBienvenue, state]);
 
-    return (
-        state && (
-            <div className="home">
-                <div className="home__header">
-                    <div className="welcome">
-                        <h1>{bienvenue[selectedBienvenue]}</h1>
-                        <Job />
-                    </div>
-                    <div className="home__loader">
-                        <Loader size={"small"} />
-                    </div>
+    return state ? (
+        <div className="home">
+            <div className="home__header">
+                <div className="welcome">
+                    <h1>{bienvenue[selectedBienvenue]}</h1>
+                    <Job />
                 </div>
-                <NavBtn />
+                <div className="home__loader">
+                    <Loader size={"small"} />
+                </div>
             </div>
-        )
+            <NavBtn />
+        </div>
+    ) : (
+        <div></div>
     );
 };
 
