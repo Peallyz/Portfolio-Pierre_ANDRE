@@ -23,6 +23,8 @@ const Profil = ({ state }) => {
     const [img3IsVisible, setImg3IsVisible] = useState();
     const [img4IsVisible, setImg4IsVisible] = useState();
 
+    const [switchArrow, setSwitchArrow] = useState(false);
+
     useEffect(() => {
         if (state) {
             const handlerIntersect1 = (entries) => {
@@ -64,11 +66,31 @@ const Profil = ({ state }) => {
             const observer4 = new IntersectionObserver(handlerIntersect4);
             observer4.observe(img4.current);
         }
+        const handleScrollArrow = () => {
+            if (window.scrollY > 200) {
+                setSwitchArrow(true);
+            } else if (window.scrollY < 200) {
+                setSwitchArrow(false);
+            }
+        };
+
+        window.addEventListener("scroll", () => handleScrollArrow());
+
+        return () =>
+            window.removeEventListener("scroll", () => handleScrollArrow());
     }, [state]);
 
     return state ? (
         <div className="profil">
-            <div className="scroll__indicator"></div>
+            <a href="#main__section" className="nav__arrow">
+                <i
+                    className={
+                        switchArrow
+                            ? "fa-solid fa-arrow-up"
+                            : "fa-solid fa-arrow-up arrowDisabled"
+                    }
+                ></i>
+            </a>
             <Header title={"Qui suis-je ?"} />
             <motion.div
                 className="scroll"
@@ -81,12 +103,19 @@ const Profil = ({ state }) => {
                     ease: "easeInOut",
                 }}
             >
-                <section className="section profil__title">
+                <section className="section profil__title" id="main__section">
                     <Job />
                     <h3>
                         Disponibilité imédiate dans le Finistere ou en remote
                     </h3>
                     <Loader size={"regular"} />
+                    <i
+                        className={
+                            switchArrow
+                                ? "fa-solid fa-arrow-down arrowDisabled"
+                                : "fa-solid fa-arrow-down "
+                        }
+                    ></i>
                 </section>
                 <section className="section profil__school">
                     <div

@@ -90,7 +90,9 @@ $gradient-radial: radial-gradient(
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     height: auto;
     min-height: 100vh;
