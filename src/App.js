@@ -20,19 +20,30 @@ function App() {
             {!loadingComplete && <Loader size={""} />}
             <AnimatePresence>
                 <Routes>
-                    {loadingComplete && (
-                        <>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/profil" element={<Profil />} />
-                            <Route path="/projets" element={<Projets />} />
-                            <Route path="/contact" element={<Contact />} />
-                            <Route
-                                path="/competences"
-                                element={<Competences />}
-                            />
-                            <Route path="/404" element={<NotFound />} />
-                        </>
-                    )}
+                    <Route
+                        path="/"
+                        element={<Home state={loadingComplete} />}
+                    />
+                    <Route
+                        path="/profil"
+                        element={<Profil state={loadingComplete} />}
+                    />
+                    <Route
+                        path="/projets"
+                        element={<Projets state={loadingComplete} />}
+                    />
+                    <Route
+                        path="/contact"
+                        element={<Contact state={loadingComplete} />}
+                    />
+                    <Route
+                        path="/competences"
+                        element={<Competences state={loadingComplete} />}
+                    />
+                    <Route
+                        path="*"
+                        element={<NotFound state={loadingComplete} />}
+                    />
                 </Routes>
             </AnimatePresence>
         </BrowserRouter>

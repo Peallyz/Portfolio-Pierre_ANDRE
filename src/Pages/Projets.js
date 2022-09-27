@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import Footer from "../Components/Footer";
 
-const Projets = () => {
+const Projets = ({ state }) => {
     const [leftProject, setLeftProject] = useState(projectsData.length - 1);
     const [mainProject, setMainProject] = useState(0);
     const [rightProject, setRightProject] = useState(1);
@@ -69,73 +69,75 @@ const Projets = () => {
     };
 
     return (
-        <div className="projets">
-            <Header title={"Mes Projects"} />
-            <motion.div
-                className="projets__container"
-                key={location.key}
-                initial={{ x: 500, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -500, opacity: 1 }}
-                transition={{
-                    duration: 0.15,
-                    ease: "easeInOut",
-                }}
-            >
-                <div
-                    className={
-                        isMovingLeft
-                            ? "project__left move__left"
-                            : isMovingRight
-                            ? "project__left move__right"
-                            : "project__left"
-                    }
+        state && (
+            <div className="projets">
+                <Header title={"Mes Projects"} />
+                <motion.div
+                    className="projets__container"
+                    key={location.key}
+                    initial={{ x: 500, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -500, opacity: 1 }}
+                    transition={{
+                        duration: 0.15,
+                        ease: "easeInOut",
+                    }}
                 >
-                    <Projet
-                        key={projectsData[leftProject].id}
-                        project={leftProject}
-                        pos={"left"}
-                    />
-                </div>
-                <div
-                    className={
-                        isMovingLeft
-                            ? "project__main move__left"
-                            : isMovingRight
-                            ? "project__main move__right"
-                            : "project__main"
-                    }
-                >
-                    <Projet
-                        key={projectsData[mainProject].id}
-                        project={mainProject}
-                        pos={"main"}
-                    />
-                </div>
-                <div
-                    className={
-                        isMovingLeft
-                            ? "project__right move__left"
-                            : isMovingRight
-                            ? "project__right move__right"
-                            : "project__right"
-                    }
-                >
-                    <Projet
-                        key={projectsData[rightProject].id}
-                        project={rightProject}
-                        pos={"right"}
-                    />
-                </div>
-                <button className="chevron__left" onClick={moveLeft}>
-                    <i className="fa-solid fa-chevron-left"></i>
-                </button>
-                <button className="chevron__right" onClick={moveRight}>
-                    <i className="fa-solid fa-chevron-right"></i>
-                </button>
-            </motion.div>
-            <Footer />
-        </div>
+                    <div
+                        className={
+                            isMovingLeft
+                                ? "project__left move__left"
+                                : isMovingRight
+                                ? "project__left move__right"
+                                : "project__left"
+                        }
+                    >
+                        <Projet
+                            key={projectsData[leftProject].id}
+                            project={leftProject}
+                            pos={"left"}
+                        />
+                    </div>
+                    <div
+                        className={
+                            isMovingLeft
+                                ? "project__main move__left"
+                                : isMovingRight
+                                ? "project__main move__right"
+                                : "project__main"
+                        }
+                    >
+                        <Projet
+                            key={projectsData[mainProject].id}
+                            project={mainProject}
+                            pos={"main"}
+                        />
+                    </div>
+                    <div
+                        className={
+                            isMovingLeft
+                                ? "project__right move__left"
+                                : isMovingRight
+                                ? "project__right move__right"
+                                : "project__right"
+                        }
+                    >
+                        <Projet
+                            key={projectsData[rightProject].id}
+                            project={rightProject}
+                            pos={"right"}
+                        />
+                    </div>
+                    <button className="chevron__left" onClick={moveLeft}>
+                        <i className="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button className="chevron__right" onClick={moveRight}>
+                        <i className="fa-solid fa-chevron-right"></i>
+                    </button>
+                </motion.div>
+                <Footer />
+            </div>
+        )
     );
 };
 
