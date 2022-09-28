@@ -1,14 +1,21 @@
 .social__network {
     ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        &#social__network--content {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            position: relative;
+            left: 0;
+        }
         a {
-            margin: 10px 10px;
+            margin: 5px;
             padding: 1.5rem;
             -webkit-transition: 0.8s ease-out;
             -o-transition: 0.8s ease-out;
             transition: 0.8s ease-out;
+            @media screen and (max-width: 800px) {
+                margin: 5px 0;
+            }
             &:hover {
                 i {
                     color: $rose;

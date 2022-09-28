@@ -17,7 +17,7 @@ const SocialNetwork = () => {
     };
     return (
         <div className="social__network">
-            <ul className="content">
+            <ul className="content" id="social__network--content">
                 <a
                     href="https://www.linkedin.com/in/pierre-andre-bb674b232/"
                     target="_blank"

@@ -232,6 +232,7 @@
     .contact__infos {
         height: 100%;
         position: relative;
+        bottom: 10%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -240,7 +241,7 @@
         -ms-flex-direction: column;
         flex-direction: column;
         -ms-flex-pack: distribute;
-        justify-content: space-around;
+        justify-content: space-evenly;
         @media screen and (max-width: 700px) {
             margin-top: 20px;
             -webkit-box-orient: horizontal;
@@ -275,14 +276,13 @@
             .content {
                 @media screen and (max-width: 700px) {
                     position: relative;
-                    left: 0;
                 }
                 @media screen and (max-width: 500px) {
                     margin-bottom: 10px;
                 }
                 position: absolute;
 
-                left: 20vw;
+                left: 0;
             }
         }
         .email {
@@ -293,17 +293,20 @@
                 }
                 position: absolute;
 
-                left: 10vw;
+                left: 8vw;
             }
         }
         .network {
-            @media screen and (max-width: 500px) {
-                margin-top: 15px;
-            }
             .content {
-                position: relative;
-
-                right: 0%;
+                position: absolute;
+                left: 15vw;
+                @media screen and (max-width: 700px) {
+                    position: relative;
+                    left: 0px;
+                }
+                @media screen and (max-width: 500px) {
+                    margin: 15px 0 10px;
+                }
             }
         }
 
