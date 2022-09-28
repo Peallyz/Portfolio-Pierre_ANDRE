@@ -198,7 +198,7 @@ const Profil = ({ state }) => {
                     >
                         <img
                             src="./assets/img/profil__dev.jpg"
-                            alt="Place assise dans un coworking"
+                            alt="Code d'un projet React"
                         />
                     </div>
                     <div className="container__right">
@@ -238,7 +238,7 @@ const Profil = ({ state }) => {
                     >
                         <img
                             src="./assets/img/cv/PA_full.jpg"
-                            alt="Place assise dans un coworking"
+                            alt="Dessin de Pierre ANDRE"
                         />
                     </div>
                     <div
@@ -252,7 +252,7 @@ const Profil = ({ state }) => {
                         <a href="./assets/img/cv/CV_Pierre_ANDRE 2022.pdf">
                             <img
                                 src="./assets/img/cv/CV_Pierre_ANDRE 2022.jpg"
-                                alt="Place assise dans un coworking"
+                                alt="CV de Pierre ANDRE"
                             />
                         </a>
                     </div>
