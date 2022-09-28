@@ -67,9 +67,9 @@ const Profil = ({ state }) => {
             observer4.observe(img4.current);
         }
         const handleScrollArrow = () => {
-            if (window.scrollY > 200) {
+            if (window.scrollY > 250) {
                 setSwitchArrow(true);
-            } else if (window.scrollY < 200) {
+            } else if (window.scrollY < 250) {
                 setSwitchArrow(false);
             }
         };
@@ -134,21 +134,19 @@ const Profil = ({ state }) => {
                     <div className="container__right">
                         <p>
                             Pour démarrer les présentations, je suis curieux de
-                            nature et j'ai eu tendance à rechercher des
-                            compétences et des connaissances dans divers
-                            domaines. <br />
-                            L'informatique depuis tout jeunes dans un premier
-                            temps. <br />
-                            Amusé de logique et de mathematique, j'ai suivis
-                            naturellement un{" "}
-                            <strong>cursus scientifiques</strong> au lycée avec
-                            une derniere année en <strong>filière ISN</strong>{" "}
-                            (Informatique et science du numérique |
-                            developpement de petits logiciels en Python).
-                            <br /> J'ai suivis ces années lycée par 3 années en{" "}
+                            nature et j'ai tendance à rechercher des compétences
+                            et des connaissances dans divers domaines, en
+                            particulier l'informatique depuis tout jeune.
+                            <br /> Amusé de logique et de mathématiques, j'ai
+                            suivi un <strong>cursus scientifique</strong> au
+                            lycée avec une dernière année en{" "}
+                            <strong>filière ISN</strong>
+                            (Informatique et sciences du numérique |
+                            développement de petits logiciels en Python).
+                            <br /> J'ai suivi ensuite une{" "}
                             <strong>licence de droit</strong> avec une
                             spécialisation en droit privé (Droit du travail et
-                            droit des affaires)
+                            droit des affaires).
                         </p>
                     </div>
                 </section>
@@ -168,19 +166,18 @@ const Profil = ({ state }) => {
                     </div>
                     <div className="container__right">
                         <p>
-                            Le travail commence dans un salon de café américain,
-                            très prisé des freelances et autres entrepreneurs.
-                            J'ai nommé <strong>Starbucks Coffee</strong>.
-                            <br />
-                            J'y ai appris le management d'équipes{" "}
-                            <strong>jusqu'a 30</strong> membres en tant que
-                            manager puis responsable de site.
-                            <br />
-                            En tant que directeur de sites je me suis vu confier
-                            la responsabilité de deux magasins où j'y ai appris
-                            et affiné ma gestion.
-                            <br />
-                            Cette experience a durée{" "}
+                            Mon expérience professionnelle à commencé dans un
+                            salon de café américain, très prisé des freelances
+                            et autres entrepreneurs. J'ai nommé{" "}
+                            <strong>Starbucks Coffee</strong>.
+                            <br /> J'y apprends le management d'équipes{" "}
+                            <strong>jusqu'a 30 membres</strong> en tant que
+                            manager puis responsable de sites.
+                            <br /> En tant que directeur, on me confie la
+                            responsabilité de deux magasins où j'apprends la
+                            gestion d'un centre de profits et affine mon
+                            management d'équipe.
+                            <br /> Cette expérience a duré{" "}
                             <strong>5 belles années</strong>.
                         </p>
                     </div>
@@ -208,23 +205,25 @@ const Profil = ({ state }) => {
                         <p>
                             Et maintenant ? (Que vais-je faire ? &#9835;) Ca
                             peut ressembler à un 180 degrés (ou un transform:
-                            rotate(180deg)) mais finalement ce retour est plutôt
-                            cohérent. J'ai eu une fenêtre pour me lancer dans
-                            l'apprentisage professionnel du developpement et je
-                            l'ai saisis.
+                            rotate(180deg)) mais ce virage est cohérent vu mon
+                            parcours et mes aspirations.
+                            <br /> J'ai eu l'opportunité de me lancer dans
+                            l'apprentisage professionnel du développement alors
+                            je m'y suis engagé avec méthode et enthousiasme.
                             <br /> D'abord <strong>HTML/CSS</strong> puis{" "}
-                            <strong>Javascript</strong> pour enfin me lancer
-                            dans un unique framework, <strong> React JS</strong>
-                            . <br /> GitHub et React Redux ne semblent pas être
+                            <strong>Javascript</strong> pour finalement me
+                            dédier à un unique framework,{" "}
+                            <strong> React JS</strong>.
+                            <br /> <strong>GitHub</strong> et{" "}
+                            <strong>React Redux</strong> ne semblent pas être
                             des options, elles ont donc fait partie intégrante
-                            de ma formation . <br />
-                            Je suis ouvert à tous les langages et toutes les
-                            technos, mais il fallait bien se poser sur un
-                            premier et l'appronfondir suffisament pour pouvoir,
-                            aujourd'hui, me présenter devant vous, avec la
-                            volonté serieuse et réelle de travailler.
-                            <br />
-                            Ce serait un plaisir pour moi de rejoindre
+                            de ma formation.
+                            <br /> Je suis ouvert à tous les langages et toutes
+                            les technos, mais j'ai choisi de me consacrer à
+                            celui-ci et de l'appronfondir suffisament pour
+                            pouvoir, aujourd'hui, me présenter devant vous, avec
+                            un bagage sérieux et la volonté de monter en
+                            compétences dans ce métier qui me passionne.
                         </p>
                     </div>
                 </section>

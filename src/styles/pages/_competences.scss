@@ -76,7 +76,12 @@
         &--right {
             width: 100%;
             li {
-                font-size: clamp(0.5rem, calc(0.8vw + 0.6rem), 1.5rem);
+                font-size: clamp(0.35rem, calc(0.8vw + 0.5rem), 1.5rem);
+                list-style-type: circle;
+                margin-left: 20px;
+                @media screen and (max-width: 550px) {
+                    margin-left: 15px;
+                }
             }
         }
     }

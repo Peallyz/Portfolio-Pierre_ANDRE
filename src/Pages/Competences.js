@@ -49,16 +49,17 @@ const Competences = ({ state }) => {
                     <div className="side">
                         <h4>Compétences annexes et qualités</h4>
                         <ul>
-                            <li>Management d'équipes</li>
+                            <li>Management d'équipe</li>
                             <li>Gestion de centre de profits</li>
                             <li>Adaptabilité</li>
                             <li>
-                                Gestion du stress et des periodes de fortes
-                                activités
+                                Gestion du stress et des périodes de forte
+                                activité
                             </li>
                             <li>Capacité à fédérer</li>
                             <li>Réactivité</li>
                             <li>Curiosité</li>
+                            <li>2nd degré incompréhensible</li>
                         </ul>
                     </div>
                 </div>
