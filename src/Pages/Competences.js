@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header/Header";
+import { motion } from "framer-motion";
 
 const Competences = ({ state }) => {
     const location = useLocation();
@@ -14,7 +15,7 @@ const Competences = ({ state }) => {
                 plus à jour puisqu'en constante évolution. Je trouve toujours le
                 moyen de les affiner ou d'en rajouter de nouvelles.
             </h3>
-            <div
+            <motion.div
                 className="skill__container"
                 key={location.key}
                 initial={{ x: 500, opacity: 0 }}
@@ -63,7 +64,7 @@ const Competences = ({ state }) => {
                         </ul>
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <Footer />
         </div>
     ) : (
