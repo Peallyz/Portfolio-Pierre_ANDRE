@@ -10,6 +10,15 @@ const projectsData = [
     },
     {
         id: 2,
+        title: "ClonePage | Starbucks",
+        date: "Octobre 2022",
+        techno: ["Javascript", "Sass"],
+        infos: "Pour ceux désireux de voir à quoi ressemblait la homepage de Starbucks pour la saison automne 2022. Clone de la Homepage en Vanilla Javascript et Sass",
+        img: "./assets/img/homepageStarbucks.PNG",
+        link: "https://peallyz.github.io/Starbucks-Homepage/",
+    },
+    {
+        id: 3,
         title: "Le blog du developpeur",
         date: "Aout 2022",
         techno: ["React", "Firebase", "Sass"],
@@ -18,7 +27,7 @@ const projectsData = [
         link: "https://peallyz.github.io/dev-blog/",
     },
     {
-        id: 3,
+        id: 4,
         title: "Cooking App",
         date: "Avril 2020",
         techno: ["React", "API", "Sass"],
@@ -27,7 +36,7 @@ const projectsData = [
         link: "https://react-cooking-app.netlify.app/",
     },
     {
-        id: 4,
+        id: 5,
         title: "ShiFuMi",
         date: "Juin 2022",
         techno: ["React", "Sass"],
@@ -36,7 +45,7 @@ const projectsData = [
         link: "https://peallyz.github.io/ShiFuMi/",
     },
     {
-        id: 5,
+        id: 6,
         title: "Sneakers",
         date: "Juin 2020",
         techno: ["JavaScript", "Sass"],
