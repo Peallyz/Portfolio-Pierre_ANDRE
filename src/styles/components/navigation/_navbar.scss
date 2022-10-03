@@ -35,7 +35,6 @@
             border: 2px solid $blue;
             width: 50px;
             height: 50px;
-            padding: 3px;
             line-height: 36px;
             aspect-ratio: 1/1;
             display: -webkit-box;
@@ -51,14 +50,16 @@
             position: absolute;
 
             cursor: pointer;
-            -webkit-box-shadow: inset 0 0 10px $violet, 0 0 10px $violet;
-            box-shadow: inset 0 0 10px $violet, 0 0 10px $violet;
 
             -webkit-transition: all 0.3s ease-in-out;
 
             -o-transition: all 0.3s ease-in-out;
 
             transition: all 0.3s ease-in-out;
+            @media screen and (max-width: 800px) {
+                width: 40px;
+                height: 40px;
+            }
 
             &::before {
                 position: absolute;
@@ -123,8 +124,8 @@
                 }
             }
             i {
-                font-size: 30px;
-                text-shadow: 0 0 4px $violet;
+                font-size: clamp(1rem, calc(0.8rem + 1vw), 2rem);
+
                 -webkit-transition: all 0.3s ease-in-out;
                 -o-transition: all 0.3s ease-in-out;
                 transition: all 0.3s ease-in-out;
