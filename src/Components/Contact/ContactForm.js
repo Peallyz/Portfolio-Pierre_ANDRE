@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs, { init } from "@emailjs/browser";
 init(process.env.ID);
 
 const ContactForm = () => {
     const form = useRef();
-    const formMess = document.querySelector(".form__message");
+
+    const [test, setTest] = useState("");
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -20,18 +21,16 @@ const ContactForm = () => {
                 (result) => {
                     console.log(result.text);
                     form.current.reset();
-                    formMess.innerHTML =
-                        "<p class='success'> Message envoyé ! </p>";
+                    setTest("success");
                     setTimeout(() => {
-                        formMess.innerHTML = "";
+                        setTest("");
                     }, 2500);
                 },
                 (error) => {
                     console.log(error.text);
-                    formMess.innerHTML =
-                        "<p class='error'> Une erreur s'est produite, veuillez réessayer ! </p>";
+                    setTest("error");
                     setTimeout(() => {
-                        formMess.innerHTML = "";
+                        setTest("");
                     }, 2500);
                 }
             );
@@ -78,7 +77,15 @@ const ContactForm = () => {
                 <p>* Champ obligatoire</p>
                 <input className="button" type="submit" value="Envoyer" />
             </form>
-            <div className="form__message"></div>
+            <div className="form__message">
+                {test && (
+                    <p className={test}>
+                        {test === "success"
+                            ? "Message envoyé !"
+                            : "Une erreur s'est produite, veuillez réessayer !"}
+                    </p>
+                )}
+            </div>
         </div>
     );
 };
